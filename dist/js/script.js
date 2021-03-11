@@ -37,11 +37,11 @@ function calculate(value){
 
 
 
-    if(flag && docGet_result !== "="){
+    if(flag && value != "="){
         let result  = eval(docGet_result.innerText);
         docGet_result.innerHTML = result + value;
         return;
-    }else if(flag && docGet_result === "="){
+    }else if(flag && value == "="){
         let result  = eval(docGet_result.innerText);
         docGet_result.innerHTML = result;
         flag = false;
