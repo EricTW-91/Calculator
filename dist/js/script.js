@@ -14,8 +14,6 @@ function clrScreen(){
     const docGet_result = document.getElementById('result');
 
     docGet_result.innerHTML = '';
-
-    console.log(flag);
 }
 
 // function addition(){
@@ -39,7 +37,11 @@ function calculate(value){
 
 
 
-    if(flag){
+    if(flag && docGet_result !== "="){
+        let result  = eval(docGet_result.innerText);
+        docGet_result.innerHTML = result + value;
+        return;
+    }else if(flag && docGet_result === "="){
         let result  = eval(docGet_result.innerText);
         docGet_result.innerHTML = result;
         flag = false;
@@ -49,8 +51,6 @@ function calculate(value){
     }
 
     flag = true;
-
-    console.log(flag);
 }
 
 
